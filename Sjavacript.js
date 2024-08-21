@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const initialContacts = [
-        { name: "Ayman Zeed", email: "Ayman.zeed@gmail.com", phone: "+972 50-3045074", age: 23, address: "Haifa",avatar:"avatars/9.jpg" },
-        { name: "Arwad Rahal", email: "arwad.rahal@gmail.com", phone: "+972 50-3982223", age: 20, address: "Tel-Aviv",avatar:"avatars/10.jpg" },
-        { name: "Yasmen Hilou", email: "Yasmen.hilou@gmail.com", phone: "+972 54-3563636", age: 21, address: "Araba" ,avatar:"avatars/4.jpg"},
-        { name: "Jana Shaaban", email: "Jana.Shaaban@gmail.com", phone: "+972 50-5179503", age: 21, address: "Natanya",avatar:"avatars/1.jpg" },
-        { name: "Danya Sawaeed", email: "Danya.Sawaeed@gmail.com", phone: "+972 50-5179503", age: 21, address: "Ako" ,avatar:"avatars/6.jpg"},
-        { name: "Ola Khateeb", email: "Ola_Khateeb@gmail.com", phone: "+972 50-2541373", age: 22, address: "Nazareth",avatar:"avatars/2.jpg" },
-        { name: "Seeba Anabose", email: "Seeba.anabose@gmail.com", phone: "+972 52-2966499", age: 21, address: "Ako" ,avatar:"avatars/5.jpg"},
-        { name: "Adam Baria", email: "Adam_baria@gmail.com", phone: "+972 54-3980730", age: 21, address: "Ako",avatar:"avatars/3.jpg" },
-        { name: "Yaman Zeed", email: "Yaman.zeed@gmail.com", phone: "+972 50-5897935", age: 21, address: "Haifa" ,avatar:"avatars/7.jpg"},
-        { name: "Ahmad Zeed", email: "Ahmad.zeed@gmail.com", phone: "+972 50-6337774", age: 21, address: "Haifa",avatar:"avatars/8.jpg" }
+        { name: "Ayman Zeed", email: "Ayman.zeed@gmail.com", phone: "+972 50-3045074", age: 23, address: "Haifa", avatar: "avatars/9.jpg" },
+        { name: "Arwad Rahal", email: "arwad.rahal@gmail.com", phone: "+972 50-3982223", age: 20, address: "Tel-Aviv", avatar: "avatars/10.jpg" },
+        { name: "Yasmen Hilou", email: "Yasmen.hilou@gmail.com", phone: "+972 54-3563636", age: 21, address: "Araba", avatar: "avatars/4.jpg" },
+        { name: "Jana Shaaban", email: "Jana.Shaaban@gmail.com", phone: "+972 50-5179503", age: 21, address: "Natanya", avatar: "avatars/1.jpg" },
+        { name: "Danya Sawaeed", email: "Danya.Sawaeed@gmail.com", phone: "+972 50-5179503", age: 21, address: "Ako", avatar: "avatars/6.jpg" },
+        { name: "Ola Khateeb", email: "Ola_Khateeb@gmail.com", phone: "+972 50-2541373", age: 22, address: "Nazareth", avatar: "avatars/2.jpg" },
+        { name: "Seeba Anabose", email: "Seeba.anabose@gmail.com", phone: "+972 52-2966499", age: 21, address: "Ako", avatar: "avatars/5.jpg" },
+        { name: "Adam Baria", email: "Adam_baria@gmail.com", phone: "+972 54-3980730", age: 21, address: "Ako", avatar: "avatars/3.jpg" },
+        { name: "Yaman Zeed", email: "Yaman.zeed@gmail.com", phone: "+972 50-5897935", age: 21, address: "Haifa", avatar: "avatars/7.jpg" },
+        { name: "Ahmad Zeed", email: "Ahmad.zeed@gmail.com", phone: "+972 50-6337774", age: 21, address: "Haifa", avatar: "avatars/8.jpg" }
     ];
-    
+
     let contacts = [...initialContacts];
     let editingContactIndex = null;
 
@@ -74,16 +74,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     window.showInfo = (index) => {
         const contact = contacts[index];
-        document.getElementById("infoName").textContent = `Name: ${contact.name}`;
-        document.getElementById("infoAge").textContent = `Age: ${contact.age || 'N/A'}`;
-        document.getElementById("infoPhone").textContent = `Phone: ${contact.phone}`;
-        document.getElementById("infoAddress").textContent = `Address: ${contact.address || 'N/A'}`;
+        document.getElementById("infoName").textContent = Name: ${contact.name};
+        document.getElementById("infoAge").textContent = Age: ${contact.age || 'N/A'};
+        document.getElementById("infoPhone").textContent = Phone: ${contact.phone};
+        document.getElementById("infoAddress").textContent = Address: ${contact.address || 'N/A'};
         document.getElementById("infoModal").style.display = "block";
     };
 
     window.deleteContact = (index) => {
-        contacts.splice(index, 1);
-        renderContacts();
+        if (window.confirm("Are you sure you want to delete this contact?")) {
+            contacts.splice(index, 1);
+            renderContacts();
+        }
     };
 
     document.getElementById("openPopupButton").addEventListener("click", () => {
