@@ -74,10 +74,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     window.showInfo = (index) => {
         const contact = contacts[index];
-        document.getElementById("infoName").textContent = Name: ${contact.name};
-        document.getElementById("infoAge").textContent = Age: ${contact.age || 'N/A'};
-        document.getElementById("infoPhone").textContent = Phone: ${contact.phone};
-        document.getElementById("infoAddress").textContent = Address: ${contact.address || 'N/A'};
+        document.getElementById("infoName").textContent = `Name: ${contact.name}`;
+        document.getElementById("infoAge").textContent = `Age: ${contact.age || 'N/A'}`;
+        document.getElementById("infoPhone").textContent = `Phone: ${contact.phone}`;
+        document.getElementById("infoAddress").textContent = `Address: ${contact.address || 'N/A'}`;
         document.getElementById("infoModal").style.display = "block";
     };
 
