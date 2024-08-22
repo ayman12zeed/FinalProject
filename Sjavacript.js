@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 </div>
                 <div class="contact-details">
                     <div class="contact-name">${contact.name}</div>
-                    <div class="contact-address">Address: ${contact.address || 'N/A'}</div>
                     <div class="contact-actions">
                         <button onclick="editContact(${index})">Edit</button>
                         <button onclick="showInfo(${index})">Info</button>
