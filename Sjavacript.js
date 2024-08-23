@@ -124,8 +124,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     window.deleteContacts = () => {
-        contacts = [];
-        renderContacts();
+        const confirmation = window.confirm("Are you sure you want to delete all contacts?");
+        if (confirmation) {
+            contacts = [];
+            renderContacts();
+        }
     };
 
     document.getElementById("closeInfoModal").addEventListener("click", () => {
