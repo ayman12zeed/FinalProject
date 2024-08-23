@@ -1,105 +1,122 @@
+/* General Body Styles */
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e0e7ff; /* Light blue background */
-    color: #333;
+    background: linear-gradient(135deg, #e0eaff, #f5e6ff); /* Light Blue to Very Light Lilac */
+    color: #333333; /* Dark Grey Text */
     line-height: 1.6;
 }
 
+/* Header Styles */
 header {
-    background-color: #3b82f6; /* Blue background */
-    color: #fff;
+    background: linear-gradient(135deg, #9b9bff, #d4a5e4); /* Light Blue to Soft Lilac */
+    color: #ffffff; /* White Text */
     text-align: center;
-    padding: 1.5rem 0; /* Increase padding */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
-    border-bottom: 4px solid #2563eb; /* Blue bottom border */
+    padding: 2rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid #d4a5e4; /* Soft Lilac Border */
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
 }
 
 h3 {
-    margin-left: 20px;
-    color: #1f2937; /* Darker text color */
+    margin: 20px 0;
+    color: #9b9bff; /* Light Blue */
     font-weight: 500;
+    font-size: 1.3rem;
 }
 
+/* Button Styles */
 button {
-    background-color: #3b82f6; /* Blue button */
-    color: #fff;
+    background: linear-gradient(135deg, #9b9bff, #d4a5e4); /* Light Blue to Soft Lilac */
+    color: #ffffff; /* White Text */
     border: none;
     padding: 12px 24px;
-    border-radius: 25px; /* Rounded button */
+    border-radius: 30px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2); /* Box shadow */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 button:hover {
-    background-color: #2563eb; /* Darker blue on hover */
-    transform: translateY(-2px); /* Slight lift effect */
+    background: linear-gradient(135deg, #d4a5e4, #9b9bff); /* Soft Lilac to Light Blue */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Search Input Styles */
 #searchInput {
-    margin: 10px 0;
+    margin: 20px 0;
     padding: 12px;
     width: 100%;
-    max-width: 400px;
-    border: 1px solid #93c5fd; /* Light blue border */
-    border-radius: 8px; /* Rounded input */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
-    transition: border-color 0.3s ease;
+    max-width: 450px;
+    border: 1px solid #d4a5e4; /* Soft Lilac Border */
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #searchInput:focus {
-    border-color: #2563eb; /* Darker blue border on focus */
+    border-color: #9b9bff; /* Light Blue */
     outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.popup {
+/* Popup and Modal Styles */
+.popup, .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.7);
 }
 
-.popup-content {
-    background-color: #fff;
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Box shadow */
-    margin: 8% auto;
-    padding: 25px;
-    max-width: 550px;
+.popup-content, .modal-content {
+    background: #ffffff; /* White */
+    border-radius: 25px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    margin: 10% auto;
+    padding: 30px;
+    max-width: 500px;
     text-align: center;
+    position: relative;
 }
 
 .close {
-    color: #999;
-    font-size: 24px;
+    color: #9b9bff; /* Light Blue */
+    font-size: 28px;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .close:hover {
-    color: #333; /* Darker color on hover */
+    color: #d4a5e4; /* Soft Lilac */
 }
 
+/* Footer Styles */
 .footer-distributed {
-    background-color: #3b82f6; /* Blue background */
+    background: linear-gradient(135deg, #9b9bff, #d4a5e4); /* Light Blue to Soft Lilac */
     text-align: center;
     font-size: 14px;
-    padding: 40px 0;
-    color: #fff;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
-    border-top: 4px solid #2563eb; /* Blue top border */
+    padding: 40px 20px;
+    color: #ffffff; /* White Text */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #d4a5e4; /* Soft Lilac Border */
 }
 
+/* Contact List Styles */
 ul#contactList {
     list-style-type: none;
     padding: 0;
@@ -109,26 +126,28 @@ ul#contactList {
 li.contact-item {
     display: flex;
     align-items: center;
-    background-color: #fff;
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Box shadow */
+    background: #ffffff; /* White Background */
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 12px 0;
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 li.contact-item:hover {
-    transform: translateY(-4px); /* Slight lift effect */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
+/* Contact Avatar Styles */
 .contact-avatar {
     flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* Circular avatar */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     overflow: hidden;
-    margin-right: 15px;
+    margin-right: 20px;
+    border: 2px solid #9b9bff; /* Light Blue Border */
 }
 
 .contact-avatar img {
@@ -137,93 +156,44 @@ li.contact-item:hover {
     display: block;
 }
 
+/* Contact Details Styles */
 .contact-details {
     flex: 1;
-    align-items: center;
-    flex-direction: row;
-    
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-name {
-    font-size: 1.4em; 
+    font-size: 1.6em;
     font-weight: 600;
-    margin-bottom: 0;
-    color: #1f2937; 
+    margin-bottom: 0.5em;
+    color: #9b9bff; /* Light Blue */
 }
 
 .contact-email, .contact-phone {
-    margin: 6px 0;
+    margin: 4px 0;
     font-size: 1em;
-    color: #4b5563; 
+    color: #555555;
 }
 
+/* Contact Actions Styles */
 .contact-actions {
     display: flex;
-    gap: 10px; 
+    gap: 15px;
 }
 
 .contact-actions button {
-    background-color: #3b82f6; 
-    color: #fff;
+    background: linear-gradient(135deg, #9b9bff, #d4a5e4); /* Light Blue to Soft Lilac */
+    color: #ffffff; /* White Text */
     border: none;
-    padding: 8px 16px;
-    border-radius: 25px;
+    padding: 10px 20px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-actions button:hover {
-    background-color: #2563eb; 
-}
-
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); 
-}
-
-.modal-content {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
-    margin: 8% auto;
-    padding: 25px;
-    max-width: 550px;
-    text-align: center;
-}
-
-.close {
-    color: #999;
-    font-size: 24px;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close:hover {
-    color: #333; 
-}
-
-.contact-avatar {
-    flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 15px;
-}
-
-.contact-avatar img {
-    width: 100%;
-    height: auto;
-    display: block;
+    background: linear-gradient(135deg, #d4a5e4, #9b9bff); /* Soft Lilac to Light Blue */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
