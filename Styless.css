@@ -1,11 +1,25 @@
 /* General Body Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #e0eaff, #f5e6ff); /* Light Blue to Very Light Lilac */
-    color: #333333; /* Dark Grey Text */
-    line-height: 1.6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    135deg,
+    #e0eaff,
+    #f5e6ff
+  ); /* Light Blue to Very Light Lilac */
+  color: #333333; /* Dark Grey Text */
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+body,
+html {
+  height: 100%;
+}
+
+section {
+  flex-grow: 1;
 }
 
 /* Header Styles */
@@ -195,5 +209,6 @@ li.contact-item:hover {
 .contact-actions button:hover {
     background: linear-gradient(135deg, #d4a5e4, #9b9bff); /* Soft Lilac to Light Blue */
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
