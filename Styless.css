@@ -1,35 +1,30 @@
 /* General Body Styles */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(
-    135deg,
-    #e0eaff,
-    #f5e6ff
-  ); /* Light Blue to Very Light Lilac */
-  color: #333333; /* Dark Grey Text */
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e0eaff, #f5e6ff); /* Light Blue to Very Light Lilac */
+    color: #333333; 
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
 }
-body,
-html {
-  height: 100%;
+body, html {
+    height: 100%;
 }
 
 section {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #9b9bff, #d4a5e4); /* Light Blue to Soft Lilac */
-    color: #ffffff; /* White Text */
+    background: linear-gradient(135deg, #9b9bff, #d4a5e4); 
+    color: #ffffff; 
     text-align: center;
     padding: 2rem 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-bottom: 4px solid #d4a5e4; /* Soft Lilac Border */
+    border-bottom: 4px solid #d4a5e4; 
 }
 
 h1 {
@@ -39,15 +34,15 @@ h1 {
 
 h3 {
     margin: 20px 0;
-    color: #9b9bff; /* Light Blue */
+    color: #9b9bff; 
     font-weight: 500;
     font-size: 1.3rem;
 }
 
 /* Button Styles */
 button {
-    background: linear-gradient(135deg, #9b9bff, #d4a5e4); /* Light Blue to Soft Lilac */
-    color: #ffffff; /* White Text */
+    background: linear-gradient(135deg, #9b9bff, #d4a5e4);
+    color: #ffffff; 
     border: none;
     padding: 12px 24px;
     border-radius: 30px;
@@ -58,7 +53,7 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(135deg, #d4a5e4, #9b9bff); /* Soft Lilac to Light Blue */
+    background: linear-gradient(135deg, #d4a5e4, #9b9bff); 
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -69,14 +64,14 @@ button:hover {
     padding: 12px;
     width: 100%;
     max-width: 450px;
-    border: 1px solid #d4a5e4; /* Soft Lilac Border */
+    border: 1px solid #d4a5e4; 
     border-radius: 20px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #searchInput:focus {
-    border-color: #9b9bff; /* Light Blue */
+    border-color: #9b9bff; 
     outline: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
@@ -95,7 +90,7 @@ button:hover {
 }
 
 .popup-content, .modal-content {
-    background: #ffffff; /* White */
+    background: #ffffff; 
     border-radius: 25px;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
     margin: 10% auto;
@@ -106,7 +101,7 @@ button:hover {
 }
 
 .close {
-    color: #9b9bff; /* Light Blue */
+    color: #9b9bff; 
     font-size: 28px;
     position: absolute;
     top: 20px;
@@ -116,7 +111,7 @@ button:hover {
 }
 
 .close:hover {
-    color: #d4a5e4; /* Soft Lilac */
+    color: #d4a5e4; 
 }
 
 /* Footer Styles */
@@ -125,90 +120,70 @@ button:hover {
     text-align: center;
     font-size: 14px;
     padding: 40px 20px;
-    color: #ffffff; /* White Text */
+    color: #ffffff; 
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid #d4a5e4; /* Soft Lilac Border */
+    border-top: 4px solid #d4a5e4; 
+    margin-top: auto;
 }
 
 /* Contact List Styles */
-ul#contactList {
+#contactList {
     list-style-type: none;
     padding: 0;
-    margin: 20px;
+    margin: 20px 0;
 }
 
-li.contact-item {
+.contact-item {
     display: flex;
     align-items: center;
-    background: #ffffff; /* White Background */
-    border-radius: 25px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 12px 0;
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
-li.contact-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-/* Contact Avatar Styles */
-.contact-avatar {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 20px;
-    border: 2px solid #9b9bff; /* Light Blue Border */
+.contact-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .contact-avatar img {
-    width: 100%;
-    height: auto;
-    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Circle Avatar */
+    margin-right: 15px;
 }
 
-/* Contact Details Styles */
 .contact-details {
-    flex: 1;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 
 .contact-name {
-    font-size: 1.6em;
-    font-weight: 600;
-    margin-bottom: 0.5em;
-    color: #9b9bff; /* Light Blue */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.contact-email, .contact-phone {
-    margin: 4px 0;
-    font-size: 1em;
-    color: #555555;
-}
-
-/* Contact Actions Styles */
 .contact-actions {
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .contact-actions button {
-    background: linear-gradient(135deg, #9b9bff, #d4a5e4); /* Light Blue to Soft Lilac */
-    color: #ffffff; /* White Text */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 20px;
 }
 
-.contact-actions button:hover {
-    background: linear-gradient(135deg, #d4a5e4, #9b9bff); /* Soft Lilac to Light Blue */
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
+#contactCounter {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d4a5e4; 
+    margin-left: 10px;
+    text-align: left;
 
+}
