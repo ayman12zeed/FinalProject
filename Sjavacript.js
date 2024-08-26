@@ -52,18 +52,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
     };
 
     const saveContact = (name, email, phone, age, address, avatar) => {
+        if (contacts.some((contact, index) => contact.name === name && index !== editingContactIndex)) {
+            alert("A contact with this name already exists.");
+            return;
+        }
+    
+        const phoneRegex = /^\d+$/;
+        if (!phoneRegex.test(phone)) {
+            alert("Please enter a valid phone number containing only digits.");
+            return;
+        }
+    
         if (editingContactIndex === null) {
             contacts.push({ name, email, phone, age, address, avatar });
         } else {
             contacts[editingContactIndex] = { name, email, phone, age, address, avatar };
-            editingContactIndex = null; // Reset after saving
+            editingContactIndex = null; 
         }
-
+    
         contacts.sort((a, b) => a.name.localeCompare(b.name));
         renderContacts();
         document.getElementById("contactForm").reset();
-        document.getElementById("popup").style.display = "none"; // Close popup after saving
+        document.getElementById("popup").style.display = "none"; 
     };
+    
 
     window.editContact = (index) => {
         editingContactIndex = index;
