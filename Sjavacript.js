@@ -12,8 +12,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         { name: "Ahmad Zeed", email: "Ahmad.zeed@gmail.com", phone: "+972 50-6337774", age: 21, address: "Haifa", avatar: "avatars/8.jpg" }
     ];
 
-    let contacts = [...initialContacts];
+    
+    let contacts = [...initialContacts].sort((a, b) => a.name.localeCompare(b.name));
     let editingContactIndex = null;
+
+    const updateCounter = (count) => {
+        document.getElementById("contactCounter").textContent = ` ${count} people`;
+    };
 
     const renderContacts = (filter = "") => {
         const contactList = document.getElementById("contactList");
@@ -42,6 +47,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 </div>`;
             contactList.appendChild(li);
         });
+
+        updateCounter(filteredContacts.length);
     };
 
     const saveContact = (name, email, phone, age, address, avatar) => {
@@ -49,11 +56,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             contacts.push({ name, email, phone, age, address, avatar });
         } else {
             contacts[editingContactIndex] = { name, email, phone, age, address, avatar };
+            editingContactIndex = null; // Reset after saving
         }
 
+        contacts.sort((a, b) => a.name.localeCompare(b.name));
         renderContacts();
         document.getElementById("contactForm").reset();
-        document.getElementById("popup").style.display = "none";
+        document.getElementById("popup").style.display = "none"; // Close popup after saving
     };
 
     window.editContact = (index) => {
@@ -78,7 +87,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     };
 
     window.deleteContact = (index) => {
-        if (window.confirm("Are you sure you want to delete this contact?")) {
+        const contactName = contacts[index].name;
+        if (window.confirm(`Are you sure you want to delete ${contactName}?`)) {
             contacts.splice(index, 1);
             renderContacts();
         }
@@ -103,20 +113,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const phone = document.getElementById("phone").value;
         const age = document.getElementById("age").value;
         const address = document.getElementById("address").value;
-
-        const avatarInput = document.getElementById("avatar");
         let avatar = "";
-        if (avatarInput.files.length > 0) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                avatar = e.target.result;
-                saveContact(name, email, phone, age, address, avatar);
-            };
-            reader.readAsDataURL(avatarInput.files[0]);
-        } else {
-            avatar = editingContactIndex !== null ? contacts[editingContactIndex].avatar : "";
-            saveContact(name, email, phone, age, address, avatar);
+
+        const avatarFile = document.getElementById("avatar").files[0];
+        if (avatarFile) {
+            avatar = URL.createObjectURL(avatarFile);
+        } else if (editingContactIndex !== null) {
+            avatar = contacts[editingContactIndex].avatar; 
         }
+
+        saveContact(name, email, phone, age, address, avatar);
+    });
+
+    document.getElementById("closeInfoModal").addEventListener("click", () => {
+        document.getElementById("infoModal").style.display = "none";
     });
 
     document.getElementById("searchInput").addEventListener("input", (event) => {
@@ -124,20 +134,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     window.deleteContacts = () => {
-        const confirmation = window.confirm("Are you sure you want to delete all contacts?");
-        if (confirmation) {
+        if (window.confirm("Are you sure you want to delete all contacts?")) {
             contacts = [];
             renderContacts();
-        }
-    };
-
-    document.getElementById("closeInfoModal").addEventListener("click", () => {
-        document.getElementById("infoModal").style.display = "none";
-    });
-
-    window.onclick = (event) => {
-        if (event.target == document.getElementById("infoModal")) {
-            document.getElementById("infoModal").style.display = "none";
         }
     };
 
