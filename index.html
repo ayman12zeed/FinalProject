@@ -6,7 +6,6 @@
     <title>Project Page</title>
     <link rel="stylesheet" href="Styless.css">
     <link rel="icon" href="avatars/calling.png" type="image/x-icon">
-
 </head>
 <body>
     <header>
@@ -17,11 +16,10 @@
         <button id="openPopupButton">Add Contact</button>
         <button onclick="deleteContacts()">Delete All Contacts</button>
         
-        <br>
-        <br>
-        <input type="text" id="searchInput" placeholder="Search Contacts">
-        
         <br><br>
+        <input type="text" id="searchInput" placeholder="Search Contacts">
+        <div id="contactCounter">Contacts :</div>
+        
         <div id="popup" class="popup">
             <div class="popup-content">
                 <span class="close" id="closePopupButton">&times;</span>
@@ -61,14 +59,10 @@
                 <p id="infoAddress">Address: </p>
             </div>
         </div>
-
-
     </section>
-    <div class="footer-distributed">
-        <footer>
-            <p>&copy; 2024 Project - Arwad Rahal & Ayman Zeed</p>
-        </footer>
-    </div>
+    <footer class="footer-distributed">
+        <p>&copy; 2024 Project - Arwad Rahal & Ayman Zeed</p>
+    </footer>
     <script src="Sjavacript.js"></script>
 </body>
 </html>
